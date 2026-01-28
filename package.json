@@ -1,0 +1,17 @@
+{
+  "name": "md-docs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "html": "md-to-pdf --as-html --config-file .md2pdf.json main.md ",
+    "pdf": "md-to-pdf --config-file .md2pdf.json main.md "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "md-to-pdf": "^5.2.5"
+  }
+}

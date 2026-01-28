@@ -1,0 +1,188 @@
+
+
+@font-face {
+  font-family: 'Biennale';
+  src: url('assets/fonts/biennale (fixed)/biennale-regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Biennale';
+  src: url('assets/fonts/biennale (fixed)/biennale-medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Biennale';
+  src: url('assets/fonts/biennale (fixed)/biennale-bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Biennale', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  color: #0066CC;
+  line-height: 1.6;
+  font-size: 14px;
+  margin: 40px;
+  padding: 0;
+  position: relative;
+}
+
+/* numbering an page break*/
+body {
+  counter-reset: h1;
+}
+
+h1 {
+  counter-reset: h2;
+  page-break-before: always
+}
+
+h1::before {
+  counter-increment: h1;
+  content: counter(h1) ". ";
+}
+
+h2::before {
+  counter-increment: h2;
+  content: counter(h1) "." counter(h2) " ";
+}
+
+h2 {
+  counter-reset: h3;
+}
+
+h3::before {
+  counter-increment: h3;
+  content: counter(h1) "." counter(h2) "." counter(h3) " ";
+}
+
+/* End numbering an page break*/
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Biennale', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  color: #003399;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  font-size: 2em;
+  margin-bottom: 0.4em;
+}
+
+h3 {
+  font-size: 1.5em;
+  margin-bottom: 0.3em;
+}
+
+p {
+  margin-bottom: 1em;
+  color: #0066CC;
+}
+
+ul, ol {
+  color: #0066CC;
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 0.5em;
+  color: #0066CC;
+}
+
+code {
+  font-family: 'SF Mono', Monaco, Inconsolata, 'Roboto Mono', Consolas, 'Courier New', monospace;
+  background-color: #f0f8ff;
+  color: #0052a3;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+pre {
+  background-color: #f0f8ff;
+  border: 1px solid #cce6ff;
+  border-radius: 5px;
+  padding: 15px;
+  overflow-x: auto;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+  color: #0052a3;
+}
+
+blockquote {
+  border-left: 4px solid #0066CC;
+  margin: 1em 0;
+  padding-left: 1em;
+  color: #004499;
+  font-style: italic;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1em 0;
+}
+
+th, td {
+  border: 1px solid #80bfff;
+  padding: 8px 12px;
+  text-align: left;
+  color: #0066CC;
+}
+
+th {
+  background-color: #e6f2ff;
+  font-weight: bold;
+  color: #003399;
+}
+
+a {
+  color: #0052a3;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #003d7a;
+}
+
+strong, b {
+  font-weight: bold;
+  color: #003399;
+}
+
+em, i {
+  font-style: italic;
+  color: #004499;
+}
+
+/* Image sizing */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1em auto;
+}
+
+/* Architecture diagrams - reduce size */
+img[src*="architecture"] {
+  max-width: 80%;
+  width: 600px;
+}
+
+/* Specific sizing for different image types */
+img[src*="drawio"] {
+  max-width: 75%;
+  width: 550px;
+}
